@@ -4,3 +4,4 @@ class SpotModel {
     this.place = place;
   }
 }
+export default SpotModel;

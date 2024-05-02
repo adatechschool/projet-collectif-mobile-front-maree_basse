@@ -4,12 +4,13 @@ import SpotViewModel from './SpotViewModel';
 
 const SpotView = () => {
 console.log('plage arrière')
- const spot = SpotViewModel("Test","Testouille");
+ const display = SpotViewModel("Test","Testouille");
+ console.log(display.spot.name)
  console.log("SpotView")
   return (
     <View>
-      <Text>{spot.name}</Text>
-      <Text>{spot.place}</Text>
+      <Text>{display.spot.name}</Text>
+      <Text>{display.spot.place}</Text>
     </View>
   )
 }
