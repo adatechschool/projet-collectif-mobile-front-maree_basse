@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text, Image} from 'react-native';
 import SpotViewModel from './SpotViewModel';
 
-const SpotView = () => {
+const SpotView = (props) => {
 console.log('plage arrière')
- const display = SpotViewModel("Test","Testouille");
+ const display = SpotViewModel(props.name,props.place);
  console.log(display.spot.name)
  console.log("SpotView")
   return (

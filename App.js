@@ -8,6 +8,9 @@ const App = () => {
       <SpotView
       name="Venice Beach"
       place="Los Angeles"/>
+      <SpotView
+      name="Berlin Beach"
+      place="Der Teufle"/>
     </View>
   );
 };
