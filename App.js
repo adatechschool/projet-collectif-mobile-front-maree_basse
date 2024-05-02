@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { SafeAreaView, Button } from 'react-native';
+import SpotView from './components/homePage/spot/view';
+import SpotViewModel from './components/homePage/spot/viewModel';
 
-export default function App() {
+const App = () => {
+  const spotViewModel = SpotViewModel();
+
+
   return (
-    <View style={styles.container}>
-    <Text>Mon test </Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <SpotView spot={spotViewModel.spot} />
+    </SafeAreaView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
