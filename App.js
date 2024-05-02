@@ -6,7 +6,6 @@ import SpotViewModel from './components/homePage/spot/viewModel';
 const App = () => {
   const spotViewModel = SpotViewModel();
 
-
   return (
     <SafeAreaView>
       <SpotView spot={spotViewModel.spot} />

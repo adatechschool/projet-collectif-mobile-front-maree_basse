@@ -5,7 +5,7 @@ import ImageViewer from '../imageViewer.js'
 const SpotView = ({ spot }) => {
   return (
     <View>
-      <ImageViewer placeholderImageSource={spot.image}>
+      //<ImageViewer placeholderImageSource={spot.image}/>
       <Text>{spot.name}</Text>
       <Text>{spot.place}</Text>
     </View>
