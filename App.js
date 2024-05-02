@@ -1,16 +1,14 @@
 import React from 'react';
-import { SafeAreaView, Button } from 'react-native';
-import SpotView from './components/homePage/spot/view';
-import SpotViewModel from './components/homePage/spot/viewModel';
+import { View } from 'react-native';
+import SpotView from './components/homePage/spot/SpotView.js';
 
 const App = () => {
-  const spotViewModel = SpotViewModel();
-
-
   return (
-    <SafeAreaView>
-      <SpotView spot={spotViewModel.spot} />
-    </SafeAreaView>
+    <View>
+      <SpotView
+      name="Venice Beach"
+      place="Los Angeles"/>
+    </View>
   );
 };
 
