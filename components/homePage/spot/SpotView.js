@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image} from 'react-native';
+import { StyleSheet, View, Text, Image, ImageBackground} from 'react-native';
 import SpotViewModel from './SpotViewModel';
 import ImageViewer from '../ImageViewer'
 
@@ -9,11 +9,31 @@ const SpotView = (props) => {
   return (
 
     <View>
-      <ImageViewer  imageSpot={{uri:display.spot.image}}/>
-      <Text>{display.spot.name}</Text>
-      <Text>{display.spot.place}</Text>
+      <ImageBackground  source={{uri:display.spot.image}} style={styles.image}>
+        <Text style={styles.name}>{display.spot.name}</Text>
+        <Text style={styles.place}>{display.spot.place}</Text>
+      </ImageBackground>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  image: {
+    width: 'auto',
+    height: 120,
+    borderRadius: 18,
+    marginBottom: 10,
+  },
+  name: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+
+    },
+  place: {
+      color: 'white',
+      fontSize: 15,
+    },
+});
 
 export default SpotView;
