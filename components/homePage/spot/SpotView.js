@@ -9,19 +9,11 @@ const SpotView = (props) => {
   return (
 
     <View>
-      <Image style={styles.image} source={{uri:display.spot.image}}/>
+      <ImageViewer  imageSpot={{uri:display.spot.image}}/>
       <Text>{display.spot.name}</Text>
       <Text>{display.spot.place}</Text>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  image: {
-    width: 380,
-    height: 100,
-    borderRadius: 18,
-  },
-});
 
 export default SpotView;
