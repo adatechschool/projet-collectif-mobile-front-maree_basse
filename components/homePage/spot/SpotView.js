@@ -28,11 +28,16 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-
+    textShadowColor: 'black',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 5,
     },
   place: {
       color: 'white',
       fontSize: 15,
+      textShadowColor: 'black',
+      textShadowOffset: {width: -1, height: 1},
+      textShadowRadius: 5,
     },
 });
 
