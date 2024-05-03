@@ -5,7 +5,6 @@ import ImageViewer from '../ImageViewer'
 
 
 const SpotView = (props) => {
-
  const display = SpotViewModel(props.name,props.place, props.image);
   return (
 
