@@ -5,11 +5,10 @@ import ImageViewer from '../ImageViewer'
 
 
 const SpotView = (props) => {
- const placeholderImage = require(props.image);
  const display = SpotViewModel(props.name,props.place, props.image);
   return (
     <View>
-      <ImageViewer placeholderImageSource={placeholderImage} />
+      <ImageViewer placeholderImageSource={props.image} />
       <Text>{display.spot.name}</Text>
       <Text>{display.spot.place}</Text>
     </View>
