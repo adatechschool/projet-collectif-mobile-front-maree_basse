@@ -3,7 +3,7 @@ import { StyleSheet, Image } from 'react-native';
 export default function ImageViewer({ placeholderImageSource }) {
  const imageSpot = placeholderImageSource;
   return (
-    <Image  source={imageSpot} style={styles.image} />
+    <Image source={imageSpot} style={styles.image} />
   );
 }
 
