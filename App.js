@@ -6,9 +6,11 @@ const App = () => {
   return (
     <View>
       <SpotView
+      image = 'chat.jpg'
       name="Venice Beach"
       place="Los Angeles"/>
       <SpotView
+      image='download.jpg'
       name="Berlin Beach"
       place="Der Teufle"/>
     </View>
