@@ -20,24 +20,27 @@ const SpotView = (props) => {
 const styles = StyleSheet.create({
   image: {
     width: 'auto',
-    height: 120,
+    height: 180,
     borderRadius: 18,
     marginBottom: 10,
   },
   name: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
     textShadowColor: 'black',
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 5,
+    marginLeft: 12,
+    marginTop: 6,
     },
   place: {
       color: 'white',
-      fontSize: 15,
+      fontSize: 18,
       textShadowColor: 'black',
       textShadowOffset: {width: -1, height: 1},
       textShadowRadius: 5,
+      marginLeft: 12,
     },
 });
 
