@@ -9,19 +9,26 @@ console.log(API_TOKEN)
 
 var Airtable = require('airtable');
 var base = new Airtable({apiKey: API_TOKEN}).base('appEksYm9WhIjEtus');
+    //console.log(records)
+    //console.log(records[0]._rawJson.fields.Address)
+    //console.log(records[0]._rawJson.fields.Photos[0].url)
+//console.log(Records.records[1].fields.Photos[0].url)
+//console.log(Records.records[0].fields.Address)
 
+let APIData=[]
 
+const App = () => {
 base('Surf Destinations').select({
     // Selecting the first 3 records in By Surf Break:
-    maxRecords: 3,
+    maxRecords: 10,
     view: "By Surf Break"
 }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
-
+    APIData=records
+    console.log(APIData)
     records.forEach(function(record) {
-        console.log('Retrieved', record.get('Destination'));
-    });
 
+    });
     // To fetch the next page of records, call `fetchNextPage`.
     // If there are more records, `page` will get called again.
     // If there are no more records, `done` will get called.
@@ -31,20 +38,17 @@ base('Surf Destinations').select({
     if (err) { console.error(err); return; }
 });
 
+    return (
+        <ScrollView style={styles.scrollView} >
+        {APIData.map((item,i)=>(
+            <SpotView key={i}
+                image = {item._rawJson.fields.Photos[0].url}
+                name = {item._rawJson.fields.Address}
+                />))}
+            </ScrollView>
+            )}
 
-const App = () => {
-//console.log(Records.records[1].fields.Photos[0].url)
-//console.log(Records.records[0].fields.Address)
 
-  return (
-    <ScrollView style={styles.scrollView} >
-        {Records.records.map((item,i) => (
-        <SpotView key={i}
-        image = {item.fields.Photos[0].url}
-        name={item.fields.Address}
-        />))}
-    </ScrollView>
-    )}
 
 
 const styles = StyleSheet.create({
