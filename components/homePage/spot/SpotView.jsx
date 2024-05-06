@@ -10,12 +10,12 @@ const SpotView = (props) => {
 
   return (
     <View>
-    //<Pressable onPress={() => navigation.navigate('components/spotPage/SpotPageView.js')}>
+  {/*<Pressable onPress={() => navigation.navigate('components/spotPage/SpotPageView.js')}>*/}
       <ImageBackground  source={{uri:display.spot.image}} style={styles.image}>
         <Text style={styles.name}>{display.spot.name}</Text>
         <Text style={styles.place}>{display.spot.place}</Text>
       </ImageBackground>
-      //</Pressable>
+
     </View>
   );
 };

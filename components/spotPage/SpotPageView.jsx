@@ -5,9 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function SpotPageView({ navigation }) {
-return (
-    <View><Text>Hello</Text></View>
-);
+return (<Text>Hello</Text>);
 };
 
 export default SpotPageView;

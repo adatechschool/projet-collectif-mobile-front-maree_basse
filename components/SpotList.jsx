@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
-import SpotView from './homePage/spot/SpotView.js';
+import SpotView from './homePage/spot/SpotView.jsx';
 
 const SpotList = () => {
 return (
