@@ -4,13 +4,15 @@ import SpotView from './components/homePage/spot/SpotView.js';
 import Records from './assets/spot.json';
 
 const App = () => {
+console.log(Records.records[1].fields.Photos[0].url)
+console.log(Records.records[0].fields.Address)
 
   return (
     <ScrollView style={styles.scrollView} >
         {Records.records.map((item,i) => (
         <SpotView key={i}
-        image = {item.Photos}
-        name={item.Address}
+        image = {item.fields.Photos[0].url}
+        name={item.fields.Address}
         />))}
     </ScrollView>
     )}
