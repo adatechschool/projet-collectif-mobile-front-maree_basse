@@ -3,19 +3,21 @@ import { StyleSheet, View, Text, Image, ImageBackground, Pressable} from 'react-
 import SpotViewModel from './SpotViewModel';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 
 
 const SpotView = (props) => {
  const display = SpotViewModel(props.name,props.place, props.image);
+ const navigation = useNavigation();
 
   return (
     <View>
-  {/*<Pressable onPress={() => navigation.navigate('components/spotPage/SpotPageView.js')}>*/}
+  <Pressable onPress={() => navigation.navigate('SpotPage')}>
       <ImageBackground  source={{uri:display.spot.image}} style={styles.image}>
         <Text style={styles.name}>{display.spot.name}</Text>
         <Text style={styles.place}>{display.spot.place}</Text>
       </ImageBackground>
-
+</Pressable>
     </View>
   );
 };
