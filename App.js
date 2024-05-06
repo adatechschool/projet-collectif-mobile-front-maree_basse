@@ -1,62 +1,27 @@
 import React from 'react';
-import { StyleSheet, ScrollView, View } from 'react-native';
-import SpotView from './components/homePage/spot/SpotView.js';
+import SpotPageView from './components/spotPage/SpotPageView.js';
+import SpotList from './components/SpotList.js';
+import {NavigationContainer} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <ScrollView style={styles.scrollView} >
-      <SpotView
-      image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Colombus_Isle.JPG/1200px-Colombus_Isle.JPG?20140713144334'
-      name="Venice Beach"
-      place="Los Angeles"/>
-      <SpotView
-      image='https://img.freepik.com/photos-gratuite/beau_1203-2633.jpg'
-      name="Berlin Beach"
-      place="Der Teufle"/>
-       <SpotView
-            image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Colombus_Isle.JPG/1200px-Colombus_Isle.JPG?20140713144334'
-            name="Venice Beach"
-            place="Los Angeles"/>
-            <SpotView
-            image='https://img.freepik.com/photos-gratuite/beau_1203-2633.jpg'
-            name="Berlin Beach"
-            place="Der Teufle"/>
-             <SpotView
-                  image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Colombus_Isle.JPG/1200px-Colombus_Isle.JPG?20140713144334'
-                  name="Venice Beach"
-                  place="Los Angeles"/>
-                  <SpotView
-                  image='https://img.freepik.com/photos-gratuite/beau_1203-2633.jpg'
-                  name="Berlin Beach"
-                  place="Der Teufle"/>
-                   <SpotView
-                        image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Colombus_Isle.JPG/1200px-Colombus_Isle.JPG?20140713144334'
-                        name="Venice Beach"
-                        place="Los Angeles"/>
-                        <SpotView
-                        image='https://img.freepik.com/photos-gratuite/beau_1203-2633.jpg'
-                        name="Berlin Beach"
-                        place="Der Teufle"/>
-                         <SpotView
-                                                image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Colombus_Isle.JPG/1200px-Colombus_Isle.JPG?20140713144334'
-                                                name="Venice Beach"
-                                                place="Los Angeles"/>
-                                                <SpotView
-                                                image='https://img.freepik.com/photos-gratuite/beau_1203-2633.jpg'
-                                                name="Berlin Beach"
-                                                place="Der Teufle"/>
-    </ScrollView>
+  <NavigationContainer>
+  <Stack.Navigator>
+  <Stack.Screen
+  name="Home"
+  component={SpotList}
+  option={{title: 'Welcome'}}
+  />
+  <Stack.Screen
+  name="SpotPage"
+  component={SpotPageView}
+  />
+  </Stack.Navigator>
+  </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 10,
-  },
-  scrollView: {
-    backgroundColor: 'white',
-    marginTop: 50,
-  },
-});
 
 export default App;

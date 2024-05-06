@@ -1,0 +1,1 @@
+//import SpotModel from './SpotPageModel';
