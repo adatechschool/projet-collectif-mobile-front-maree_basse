@@ -11,12 +11,12 @@ const App = () => {
   <NavigationContainer>
   <Stack.Navigator>
   <Stack.Screen
-  name="Home"
+  name="Marée basse"
   component={SpotList}
   option={{title: 'Welcome'}}
   />
   <Stack.Screen
-  name="SpotPage"
+  name="Lumière sur le spot"
   component={SpotPageView}
   />
   </Stack.Navigator>

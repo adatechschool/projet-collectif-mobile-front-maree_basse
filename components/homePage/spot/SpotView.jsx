@@ -12,7 +12,7 @@ const SpotView = (props) => {
 
   return (
     <View>
-  <Pressable onPress={() => navigation.navigate('SpotPage')}>
+  <Pressable onPress={() => navigation.navigate('Lumière sur le spot')}>
       <ImageBackground  source={{uri:display.spot.image}} style={styles.image}>
         <Text style={styles.name}>{display.spot.name}</Text>
         <Text style={styles.place}>{display.spot.place}</Text>

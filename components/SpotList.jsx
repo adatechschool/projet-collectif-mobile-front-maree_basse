@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         backgroundColor: 'white',
-        marginTop: 50,
     },
 });
 
