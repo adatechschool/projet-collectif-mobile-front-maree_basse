@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
-import SpotView from './components/homePage/spot/SpotView.jsx';
-import Records from './assets/spot.json';
-import {API_TOKEN} from "./env.jsx"
+import SpotView from './homePage/spot/SpotView.jsx';
+import Records from '../assets/spot.json';
+import {API_TOKEN} from "../env.jsx"
 
 var Airtable = require('airtable');
 var base = new Airtable({apiKey: API_TOKEN}).base('appEksYm9WhIjEtus');
