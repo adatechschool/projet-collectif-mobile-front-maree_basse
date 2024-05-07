@@ -3,6 +3,27 @@ import { API_TOKEN } from "../env.jsx";
 
 var base = new Airtable({ apiKey: API_TOKEN }).base('appEksYm9WhIjEtus');
 
+export class SpotModel {
+  constructor(name, place, image) {
+    this.name = name;
+    this.place = place;
+    this.image = image;
+  }
+}
+
+export class SpotPageModel {
+  constructor(name, place, image, stars, breaktype, peakseason, link, influencer) {
+    this.name = name;
+    this.place = place;
+    this.image = image;
+    this.stars = stars;
+    this.breaktype = breaktype;
+    this.peakseason = peakseason;
+    this.link = link;
+    this.influencer = influencer;
+  }
+}
+
 export const fetchSpotData = () => {
     return new Promise((resolve, reject) => {
         base("Surf Destinations").select({

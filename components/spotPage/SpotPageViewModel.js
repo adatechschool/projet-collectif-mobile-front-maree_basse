@@ -1,4 +1,4 @@
-import SpotPageModel from './SpotPageModel';
+import SpotPageModel from '../Model.js';
 
 const SpotPageViewModel = (name,place,image,stars,breaktype,peakseason,link,influencer) => {
 

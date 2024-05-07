@@ -1,4 +1,4 @@
-import SpotModel from './SpotModel';
+import SpotModel from '../Model.js';
 
 const SpotViewModel = (name,place,image) => {
 
