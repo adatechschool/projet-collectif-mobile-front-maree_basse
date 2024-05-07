@@ -1,5 +1,8 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
+
+env.jsx
+
 # dependencies
 node_modules/
 
@@ -27,7 +30,7 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# local env.jsx files
 .env*.local
 
 # typescript
