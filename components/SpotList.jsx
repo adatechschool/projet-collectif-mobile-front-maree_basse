@@ -5,6 +5,7 @@ import { fetchSpotData } from './API.js'; // Import de la fonction
 
 const SpotList = () => {
     const [APIData, setAPIData] = useState([]);
+    console.log(APIData);
 
     useEffect(() => {
         fetchSpotData() // Appel de la fonction fetchSpotData depuis le fichier api.js
