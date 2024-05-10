@@ -3,15 +3,9 @@ import { API_TOKEN } from "../env.jsx";
 
 var base = new Airtable({ apiKey: API_TOKEN }).base('appEksYm9WhIjEtus');
 
-export class SpotModel {
-  constructor(name, place, image) {
-    this.name = name;
-    this.place = place;
-    this.image = image;
-  }
-}
 
-export class SpotPageModel {
+
+export class SpotModel {
   constructor(name, place, image, stars, breaktype, peakseason, link, influencer) {
     this.name = name;
     this.place = place;

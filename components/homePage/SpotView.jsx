@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, ImageBackground, Pressable} from 'react-native';
-import SpotViewModel from './SpotViewModel';
+import SpotViewModel from '../SpotViewModel';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';

@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView, Text, Image, ImageBackground, Pressable} from 'react-native';
-import SpotPageViewModel from './SpotPageViewModel';
+import SpotViewModel from '../SpotViewModel';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 
 
 const SpotPageView = (props) => {
- const display = SpotPageViewModel(props.name,props.place,props.image,props.stars,props.breaktype,props.peakseason,props.link,props.influencer);
+ const display = SpotViewModel(props.name,props.place,props.image,props.stars,props.breaktype,props.peakseason,props.link,props.influencer);
  const navigation = useNavigation();
 
   return (
