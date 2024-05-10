@@ -14,7 +14,7 @@ const Spot = () => {
         fetchSpotData(spotId)
             .then(records => {
                 const spot = records.find(item => item.id === spotId);
-                console.log(records)
+                console.log(spot)
                 setSpotData(spot);
             })
             .catch(err => {
@@ -24,10 +24,11 @@ const Spot = () => {
 
     return (
         <ScrollView style={styles.scrollView}>
-            {spotData && (
+            {spotData && spotData._rawJson &&(
                 <SpotPageView
                     image={spotData._rawJson.fields.Photos && spotData._rawJson.fields.Photos[0] && spotData._rawJson.fields.Photos[0].url}
                     name={spotData._rawJson.fields.Address}
+
                 />
             )}
         </ScrollView>
