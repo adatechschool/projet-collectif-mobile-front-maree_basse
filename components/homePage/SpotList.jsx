@@ -5,7 +5,7 @@ import { fetchSpotData } from '../Model.js';
 
 const SpotList = () => {
     const [APIData, setAPIData] = useState([]);
-
+console.log(APIData)
     useEffect(() => {
         fetchSpotData()
             .then(records => {
@@ -23,6 +23,7 @@ const SpotList = () => {
                     key={i}
                     image={item._rawJson.fields.Photos && item._rawJson.fields.Photos[0] && item._rawJson.fields.Photos[0].url}
                     name={item._rawJson.fields.Address}
+                    id={item._rawJson.id}
                 />
             ))}
         </ScrollView>

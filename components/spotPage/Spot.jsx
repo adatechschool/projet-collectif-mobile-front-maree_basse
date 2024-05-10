@@ -1,32 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 import SpotPageView from './SpotPageView.jsx';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { fetchSpotData } from '../Model.js';
 
 const Spot = () => {
-    const [APIData, setAPIData] = useState([]);
+    const [spotData, setSpotData] = useState([]);
+    const navigation = useNavigation();
+    const route = useRoute();
+    const { spotId } = route.params;
 
     useEffect(() => {
-        fetchSpotData()
+        fetchSpotData(spotId)
             .then(records => {
-                setAPIData(records);
+                const spot = records.find(item => item.id === spotId);
+                console.log(records)
+                setSpotData(spot);
             })
             .catch(err => {
                 console.error(err);
             });
-    }, []);
+    }, [spotId]);
 
     return (
-
-            {Array.isArray(APIData) && APIData.map((item, i) => (
+        <ScrollView style={styles.scrollView}>
+            {spotData && (
                 <SpotPageView
-                    key={i}
-                    image={item._rawJson.fields.Photos && item._rawJson.fields.Photos[0] && item._rawJson.fields.Photos[0].url}
-                    name={item._rawJson.fields.Address}
-                    place
+                    image={spotData._rawJson.fields.Photos && spotData._rawJson.fields.Photos[0] && spotData._rawJson.fields.Photos[0].url}
+                    name={spotData._rawJson.fields.Address}
                 />
-            ))}
-
+            )}
+        </ScrollView>
     );
 }
 
