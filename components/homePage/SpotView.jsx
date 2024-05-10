@@ -16,7 +16,6 @@ const SpotView = (props) => {
       <ImageBackground  source={{uri:display.spot.image}} style={styles.image}>
         <Text style={styles.name}>{display.spot.name}</Text>
         <Text style={styles.place}>{display.spot.place}</Text>
-        <Text style={styles.place}>{display.spot.id}</Text>
       </ImageBackground>
 </Pressable>
     </View>

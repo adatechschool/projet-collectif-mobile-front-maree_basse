@@ -22,8 +22,9 @@ console.log(APIData)
                 <SpotView
                     key={i}
                     image={item._rawJson.fields.Photos && item._rawJson.fields.Photos[0] && item._rawJson.fields.Photos[0].url}
-                    name={item._rawJson.fields.Address}
+                    name={item._rawJson.fields.Destination}
                     id={item._rawJson.id}
+                    place={item._rawJson.fields["Destination State/Country"]}
                 />
             ))}
         </ScrollView>

@@ -7,28 +7,29 @@ import { useNavigation } from '@react-navigation/native';
 
 
 const SpotPageView = (props) => {
- const display = SpotViewModel(props.id, props.name,props.place,props.image,props.stars,props.breaktype,props.peakseason,props.link,props.influencer);
- const navigation = useNavigation();
+const display = SpotViewModel(props.id, props.name,props.place,props.image,props.difficulty,props.breaktype,props.peakseasonbegins,props.peakseasonends,props.link,props.geocode);
+const navigation = useNavigation();
 
-  return (
-    <ScrollView>
-    <Image style={styles.image} source={{uri:display.spot.image}}/>
-    <Text style={styles.name}>{display.spot.name}</Text>
-    <Text style={styles.title}>Place</Text>
-    <Text style={styles.place}>{display.spot.place}</Text>
-    <Text style={styles.title}>Difficulty</Text>
-    <Image Difficulty Level/>
-    <Text style={styles.title}>Surf Break</Text>
-    <Text>Surf Break</Text>
-    <Text style={styles.title}>Peak Surf Season</Text>
-<Text>Peak Surf Season</Text>
-<Text style={styles.title}>Geocode</Text>
-<View style={styles.geocode}><Text>eyJpIjoiTWFudSBCYXksIFJhZ2xhbiwgTmV3IFplYWxhbmQiLCJvIjp7InN0YXR1cyI6Ik9LIiwiZm9ybWF0dGVkQWRkcmVzcyI6Ik1hbnUgQmF5IFJkLCBSYWdsYW4gMzI5NywgTmV3IFplYWxhbmQiLCJsYXQiOi0zNy44MjE0NTkyLCJsbmciOjE3NC44MTIyMTYxOTk5OTk5N30sImUiOjE1MzUzMDcwMjYwNTJ9</Text></View>
-<Text style={styles.title}>Influencers</Text>
-<Text>Influencers</Text>
-
-    </ScrollView>
-  );
+ return (
+   <ScrollView>
+   <Image style={styles.image} source={{uri:display.spot.image}}/>
+   <Text style={styles.name}>{display.spot.name}</Text>
+   <Text style={styles.title}>Place</Text>
+   <Text style={styles.place}>{display.spot.place}</Text>
+   <Text style={styles.title}>Difficulty</Text>
+   <Text style={styles.place}>{display.spot.difficulty}</Text>
+   <Text style={styles.title}>Break Type</Text>
+   <Text>{display.spot.breaktype}</Text>
+   <Text style={styles.title}>Peak Surf Season Begins</Text>
+   <Text>{display.spot.peakseasonbegins}</Text>
+   <Text style={styles.title}>Peak Surf Season Ends</Text>
+   <Text>{display.spot.peakseasonends}</Text>
+   <Text style={styles.title}>Geocode</Text>
+   <View style={styles.geocode}><Text>{display.spot.geocode}</Text></View>
+   <Text style={styles.title}>Link</Text>
+   <Text style={styles.place}>{display.spot.link}</Text>
+   </ScrollView>
+ );
 };
 
 const styles = StyleSheet.create({

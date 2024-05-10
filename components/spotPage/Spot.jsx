@@ -25,11 +25,17 @@ const Spot = () => {
     return (
         <ScrollView style={styles.scrollView}>
             {spotData && spotData._rawJson &&(
-                <SpotPageView
-                    image={spotData._rawJson.fields.Photos && spotData._rawJson.fields.Photos[0] && spotData._rawJson.fields.Photos[0].url}
-                    name={spotData._rawJson.fields.Address}
-
-                />
+               <SpotPageView
+                   image={spotData._rawJson.fields.Photos && spotData._rawJson.fields.Photos[0] && spotData._rawJson.fields.Photos[0].url}
+                   name={spotData._rawJson.fields.Destination}
+                   place={spotData._rawJson.fields["Destination State/Country"]}
+                   difficulty={spotData._rawJson.fields["Difficulty Level"]}
+                   peakseasonbegins={spotData._rawJson.fields["Peak Surf Season Begins"]}
+                   peakseasonends={spotData._rawJson.fields["Peak Surf Season Ends"]}
+                   breaktype={spotData._rawJson.fields["Surf Break"][0]}
+                   geocode={spotData._rawJson.fields.Geocode}
+                   link={spotData._rawJson.fields["Magic Seaweed Link"]}
+               />
             )}
         </ScrollView>
     );
