@@ -7,15 +7,15 @@ import { useNavigation } from '@react-navigation/native';
 
 
 const SpotPageView = (props) => {
- const display = SpotViewModel(props.name,props.place,props.image,props.stars,props.breaktype,props.peakseason,props.link,props.influencer);
+ const display = SpotViewModel(props.id, props.name,props.place,props.image,props.stars,props.breaktype,props.peakseason,props.link,props.influencer);
  const navigation = useNavigation();
 
   return (
     <ScrollView>
-    <Image style={styles.image} source={{uri:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Colombus_Isle.JPG/1200px-Colombus_Isle.JPG?20140713144334'}}/>
-    <Text style={styles.name}>Display Name</Text>
+    <Image style={styles.image} source={{uri:display.spot.image}}/>
+    <Text style={styles.name}>{display.spot.name}</Text>
     <Text style={styles.title}>Place</Text>
-    <Text style={styles.place}>Display place</Text>
+    <Text style={styles.place}>{display.spot.place}</Text>
     <Text style={styles.title}>Difficulty</Text>
     <Image Difficulty Level/>
     <Text style={styles.title}>Surf Break</Text>

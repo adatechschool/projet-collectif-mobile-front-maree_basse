@@ -7,12 +7,12 @@ import { useNavigation } from '@react-navigation/native';
 
 
 const SpotView = (props) => {
- const display = SpotViewModel(props.name,props.place, props.image);
+ const display = SpotViewModel(props.id, props.name,props.place, props.image);
  const navigation = useNavigation();
 
   return (
     <View>
-  <Pressable onPress={() => navigation.navigate('Lumière sur le spot')}>
+  <Pressable onPress={() => navigation.navigate("Lumière sur le spot", {spotId: display.props.id})}>
       <ImageBackground  source={{uri:display.spot.image}} style={styles.image}>
         <Text style={styles.name}>{display.spot.name}</Text>
         <Text style={styles.place}>{display.spot.place}</Text>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
-import SpotView from './homePage/SpotView.jsx';
-import { fetchSpotData } from './Model.js';
+import SpotPageView from './SpotPageView.jsx';
+import { fetchSpotData } from '../Model.js';
 
-const SpotList = () => {
+const Spot = () => {
     const [APIData, setAPIData] = useState([]);
 
     useEffect(() => {
@@ -17,15 +17,16 @@ const SpotList = () => {
     }, []);
 
     return (
-        <ScrollView style={styles.scrollView}>
+
             {Array.isArray(APIData) && APIData.map((item, i) => (
-                <SpotView
+                <SpotPageView
                     key={i}
                     image={item._rawJson.fields.Photos && item._rawJson.fields.Photos[0] && item._rawJson.fields.Photos[0].url}
                     name={item._rawJson.fields.Address}
+                    place
                 />
             ))}
-        </ScrollView>
+
     );
 }
 
@@ -35,4 +36,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SpotList;
+export default Spot;

@@ -6,7 +6,8 @@ var base = new Airtable({ apiKey: API_TOKEN }).base('appEksYm9WhIjEtus');
 
 
 export default class SpotModel {
-  constructor(name, place, image, stars, breaktype, peakseason, link, influencer) {
+  constructor(id, name, place, image, stars, breaktype, peakseason, link, influencer) {
+    this.id = id;
     this.name = name;
     this.place = place;
     this.image = image;

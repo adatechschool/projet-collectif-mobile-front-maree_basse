@@ -1,6 +1,6 @@
 import React from 'react';
 import SpotPageView from './components/spotPage/SpotPageView.jsx';
-import SpotList from './components/SpotList.jsx';
+import SpotList from './components/homePage/SpotList.jsx';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -17,7 +17,7 @@ const App = () => {
   />
   <Stack.Screen
   name="Lumière sur le spot"
-  component={SpotPageView}
+  component={Spot}
   />
   </Stack.Navigator>
   </NavigationContainer>
