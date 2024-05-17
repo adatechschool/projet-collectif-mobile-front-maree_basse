@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 import SpotView from './SpotView.jsx';
-import { fetchSpotData } from '../Model.js';
+import { fetchSpots } from '../Model.js';
 
 const SpotList = () => {
     const [APIData, setAPIData] = useState([]);
-console.log(APIData)
+    console.log(APIData)
     useEffect(() => {
-        fetchSpotData()
+        fetchSpots()
             .then(records => {
                 setAPIData(records);
             })
@@ -21,15 +21,16 @@ console.log(APIData)
             {Array.isArray(APIData) && APIData.map((item, i) => (
                 <SpotView
                     key={i}
-                    image={item._rawJson.fields.Photos && item._rawJson.fields.Photos[0] && item._rawJson.fields.Photos[0].url}
-                    name={item._rawJson.fields.Destination}
-                    id={item._rawJson.id}
-                    place={item._rawJson.fields["Destination State/Country"]}
+                    image={item.image}
+                    name={item.name}
+                    id={item.id}
+                    place={item.place}
                 />
             ))}
         </ScrollView>
     );
 }
+
 
 const styles = StyleSheet.create({
     scrollView: {

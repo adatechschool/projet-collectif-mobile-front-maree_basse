@@ -1,8 +1,8 @@
-var Airtable = require('airtable');
-import { API_TOKEN } from "../env.jsx";
+// var Airtable = require('airtable');
+// import { API_TOKEN } from "../env.jsx";
 
-var base = new Airtable({ apiKey: API_TOKEN }).base('appEksYm9WhIjEtus');
-
+// var base = new Airtable({ apiKey: API_TOKEN }).base('appEksYm9WhIjEtus');
+const apiUrl = "http://localhost:3000/appli";
 
 
 export default class SpotModel {
@@ -20,18 +20,24 @@ export default class SpotModel {
   }
 }
 
-export const fetchSpotData = () => {
-    return new Promise((resolve, reject) => {
-        base("Surf Destinations").select({
-            maxRecords: 100,
-            view: "By Surf Break"
-        }).eachPage(function page(records, fetchNextPage) {
-            resolve(records);
-            fetchNextPage();
-        }, function done(err) {
-            if (err) {
-                reject(err);
-            }
-        });
-    });
-};
+// export const fetchSpotData = () => {
+//     return new Promise((resolve, reject) => {
+//         base("Surf Destinations").select({
+//             maxRecords: 100,
+//             view: "By Surf Break"
+//         }).eachPage(function page(records, fetchNextPage) {
+//             resolve(records);
+//             fetchNextPage();
+//         }, function done(err) {
+//             if (err) {
+//                 reject(err);
+//             }
+//         });
+//     });
+// };
+
+export function fetchSpots() {
+    return fetch(`${apiUrl}`)
+    //Pas de method précisée : GET par défaut
+.then(response => response.json())
+}
