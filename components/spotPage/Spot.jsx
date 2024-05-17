@@ -25,7 +25,7 @@ const Spot = () => {
 
     return (
         <ScrollView style={styles.scrollView}>
-            {spotData && spotData &&(
+            { (
                <SpotPageView
                    image={spotData.image}
                    name={spotData.name}

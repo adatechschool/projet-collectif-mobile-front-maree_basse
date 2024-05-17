@@ -9,8 +9,11 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
   <NavigationContainer>
-  <Stack.Navigator>
-  <Stack.Screen
+  <Stack.Navigator
+  screenOptions={{
+        headerShown: false
+      }}>
+   <Stack.Screen
   name="Marée basse"
   component={SpotList}
   option={{title: 'Welcome'}}
