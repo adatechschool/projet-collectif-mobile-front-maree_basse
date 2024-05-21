@@ -4,6 +4,7 @@ import SpotViewModel from '../SpotViewModel';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
 
 
 const SpotView = (props) => {
@@ -12,6 +13,7 @@ const navigation = useNavigation();
 
   return (
     <View>
+    <StatusBar style="auto" />
       <Pressable onPress={() => navigation.navigate("Lumière sur le spot", {spotId: display.spot.id})}>
         <ImageBackground  source={{uri:display.spot.image}} style={styles.image}>
             <Text style={styles.name}>{display.spot.name}</Text>

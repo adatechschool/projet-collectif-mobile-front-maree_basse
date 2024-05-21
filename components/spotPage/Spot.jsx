@@ -14,8 +14,6 @@ const Spot = () => {
         fetchSpots(spotId)
             .then(records => {
                 const spot = records.find(item => item.id === spotId);
-                console.log("jesuislà avant spot")
-                console.log(spot)
                 setSpotData(spot);
             })
             .catch(err => {

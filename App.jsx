@@ -1,6 +1,7 @@
 import React from 'react';
 import Spot from './components/spotPage/Spot.jsx';
 import SpotList from './components/homePage/SpotList.jsx';
+import AddSpot from './components/addSpotPage/AddSpot.jsx';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -18,6 +19,11 @@ const App = () => {
   component={SpotList}
   option={{title: 'Welcome'}}
   />
+  <Stack.Screen
+  name="Ajouter un spot"
+  component={AddSpot}
+  />
+
   <Stack.Screen
   name="Lumière sur le spot"
   component={Spot}
