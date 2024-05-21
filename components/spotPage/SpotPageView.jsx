@@ -10,8 +10,7 @@ const SpotPageView = (props) => {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView>
-      <View style={{ position: 'relative'}}>
+
         <ScrollView>
           <Image style={styles.image} source={{ uri: display.spot.image }} />
           <Text style={styles.name}>{display.spot.name}</Text>
@@ -27,14 +26,14 @@ const SpotPageView = (props) => {
           <Text style={styles.petit}>{display.spot.peakseasonends}</Text>
           <Text style={styles.title}>Geocode</Text>
           <View style={styles.geocode}><Text style={styles.petit}>{display.spot.geocode}</Text></View>
+           <Text style={styles.title}>Geocode</Text>
+                    <View style={styles.geocode}><Text style={styles.petit}>{display.spot.geocode}</Text></View>
+                     <Text style={styles.title}>Geocode</Text>
+                              <View style={styles.geocode}><Text style={styles.petit}>{display.spot.geocode}</Text></View>
           <Text style={styles.title}>Link</Text>
           <Text style={styles.petit} onPress={() => Linking.openURL(display.spot.link)}>Discover the spot</Text>
         </ScrollView>
-        <TouchableOpacity style={styles.button_back} onPress={() => navigation.goBack()} >
-          <Text style={{ color: "black" }}>Back</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+
   );
 };
 
@@ -73,19 +72,7 @@ const styles = StyleSheet.create({
     marginRight: 6,
     borderRadius: 8,
   },
-  button_back: {
-    borderWidth: 1,
-    borderColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 70,
-    height: 70,
-    backgroundColor: 'white',
-    borderRadius: 100,
-    position: 'absolute',
-    top: 20,
-    left: 20,
-  },
+
 });
 
 export default SpotPageView;

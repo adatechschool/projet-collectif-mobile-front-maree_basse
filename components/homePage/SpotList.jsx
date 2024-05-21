@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
        width: 70,
        height: 70,
        backgroundColor: 'white',
-       opacity:0.7,
+       opacity: 0.7,
        borderRadius: 100,
        position: 'absolute',
        bottom: 40,

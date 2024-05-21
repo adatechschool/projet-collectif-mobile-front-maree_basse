@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
 import SpotPageView from './SpotPageView.jsx';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { fetchSpots } from '../Model.js';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { AntDesign } from '@expo/vector-icons';
 
 const Spot = () => {
     const [spotData, setSpotData] = useState([]);
@@ -22,6 +24,7 @@ const Spot = () => {
     }, [spotId]);
 
     return (
+    <SafeAreaView>
         <ScrollView style={styles.scrollView}>
             { (
                <SpotPageView
@@ -37,6 +40,10 @@ const Spot = () => {
                />
             )}
         </ScrollView>
+         <TouchableOpacity style={styles.button_back} onPress={() => navigation.goBack()} >
+                  <AntDesign name="arrowleft" size={40} color="black" />
+                </TouchableOpacity>
+            </SafeAreaView>
     );
 }
 
@@ -44,6 +51,20 @@ const styles = StyleSheet.create({
     scrollView: {
         backgroundColor: 'white',
     },
+     button_back: {
+        borderWidth: 1,
+        borderColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 70,
+        height: 70,
+        backgroundColor: 'white',
+        opacity: 0.7,
+        borderRadius: 100,
+        position: 'absolute',
+        top: 70,
+        left: 20,
+      },
 });
 
 export default Spot;
