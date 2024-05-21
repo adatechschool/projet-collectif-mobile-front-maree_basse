@@ -2,7 +2,7 @@
 // import { API_TOKEN } from "../env.jsx";
 
 // var base = new Airtable({ apiKey: API_TOKEN }).base('appEksYm9WhIjEtus');
-const apiUrl = "http://localhost:3000/appli";
+const apiUrl = "http://192.168.11.173:3000/appli";
 
 
 export default class SpotModel {

@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { Linking } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const SpotPageView = (props) => {
@@ -12,6 +13,7 @@ const display = SpotViewModel(props.id, props.name,props.place,props.image,props
 const navigation = useNavigation();
 
  return (
+     <SafeAreaView>
    <ScrollView>
    <Image style={styles.image} source={{uri:display.spot.image}}/>
    <Text style={styles.name}>{display.spot.name}</Text>
@@ -30,6 +32,7 @@ const navigation = useNavigation();
    <Text style={styles.title}>Link</Text>
    <Text style={styles.petit} onPress={() => Linking.openURL(display.spot.link)}>Discover the spot</Text>
    </ScrollView>
+       </SafeAreaView>
  );
 };
 

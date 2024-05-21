@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 import SpotView from './SpotView.jsx';
 import { fetchSpots } from '../Model.js';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const SpotList = () => {
     const [APIData, setAPIData] = useState([]);
@@ -17,6 +18,7 @@ const SpotList = () => {
     }, []);
 
     return (
+    <SafeAreaView>
         <ScrollView style={styles.scrollView}>
             {Array.isArray(APIData) && APIData.map((item, i) => (
                 <SpotView
@@ -28,6 +30,7 @@ const SpotList = () => {
                 />
             ))}
         </ScrollView>
+        </SafeAreaView>
     );
 }
 
