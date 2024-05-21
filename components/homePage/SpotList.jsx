@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView , Pressable, Text} from 'react-native';
 import SpotView from './SpotView.jsx';
 import { fetchSpots } from '../Model.js';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 
 const SpotList = () => {
@@ -20,6 +21,7 @@ const SpotList = () => {
     const navigation = useNavigation();
 
     return (
+        <SafeAreaView>
             <ScrollView style={styles.scrollView}>
                 {Array.isArray(APIData) && APIData.map((item, i) => (
                     <SpotView
@@ -32,8 +34,9 @@ const SpotList = () => {
                 ))}
                 <Pressable style={styles.buttonAddSpot} onPress={() => navigation.navigate("Ajouter un spot")}>
                     <Text style={styles.textButtonAddSpot}>+ add spot</Text>
-                </Pressable>        
+                </Pressable> 
             </ScrollView>
+        </SafeAreaView>
     );
 }
 
