@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ScrollView , Pressable, Text} from 'react-native';
+import { StyleSheet, ScrollView , Pressable, Text, TouchableOpacity} from 'react-native';
 import SpotView from './SpotView.jsx';
 import { fetchSpots } from '../Model.js';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import { AntDesign } from '@expo/vector-icons';
 
 const SpotList = () => {
     const [APIData, setAPIData] = useState([]);
@@ -32,10 +33,10 @@ const SpotList = () => {
                         place={item.place}
                     />
                 ))}
-                <Pressable style={styles.buttonAddSpot} onPress={() => navigation.navigate("Ajouter un spot")}>
-                    <Text style={styles.textButtonAddSpot}>+ add spot</Text>
-                </Pressable> 
             </ScrollView>
+            <TouchableOpacity style={styles.button_add} onPress={() =>  navigation.navigate("Ajouter un spot")} >
+                    <AntDesign name="plus" size={40} color="black" />
+            </TouchableOpacity>
         </SafeAreaView>
     );
 }
@@ -45,16 +46,21 @@ const styles = StyleSheet.create({
     scrollView: {
         backgroundColor: 'white',
     },
-    buttonAddSpot: {
-        backgroundColor: 'blue',
-        height: 40,
-    },
-    textButtonAddSpot: {
-        color: 'white',
-        fontSize: 18,
-        textAlign: 'center',
-        marginTop:10,
-    }
+   button_add: {
+       borderWidth: 1,
+       borderColor: 'white',
+       alignItems: 'center',
+       justifyContent: 'center',
+       width: 70,
+       height: 70,
+       backgroundColor: 'white',
+       opacity:0.7,
+       borderRadius: 100,
+       position: 'absolute',
+       bottom: 40,
+       right: 20,
+
+     },
 });
 
 export default SpotList;

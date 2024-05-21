@@ -10,9 +10,9 @@ const SpotPageView = (props) => {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1 }}>
-        <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
+    <SafeAreaView>
+      <View style={{ position: 'relative'}}>
+        <ScrollView>
           <Image style={styles.image} source={{ uri: display.spot.image }} />
           <Text style={styles.name}>{display.spot.name}</Text>
           <Text style={styles.title}>Place</Text>
@@ -30,9 +30,7 @@ const SpotPageView = (props) => {
           <Text style={styles.title}>Link</Text>
           <Text style={styles.petit} onPress={() => Linking.openURL(display.spot.link)}>Discover the spot</Text>
         </ScrollView>
-        <TouchableOpacity
-          style={styles.button_back}
-          onPress={() => navigation.goBack()} >
+        <TouchableOpacity style={styles.button_back} onPress={() => navigation.goBack()} >
           <Text style={{ color: "black" }}>Back</Text>
         </TouchableOpacity>
       </View>
