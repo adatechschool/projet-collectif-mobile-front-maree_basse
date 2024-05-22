@@ -2,7 +2,7 @@
 // import { API_TOKEN } from "../env.jsx";
 
 // var base = new Airtable({ apiKey: API_TOKEN }).base('appEksYm9WhIjEtus');
-const apiUrl = "http://192.168.11.160:3000/appli";
+const apiUrl = "http://192.168.1.22:3000/appli";
 
 
 export default class SpotModel {
@@ -62,6 +62,23 @@ export function fetchAddSpot(donnees){
       //Ne pas indiquer la page d'origine de la requête
        body: JSON.stringify(donnees),
       // le type utilisé pour le corps doit correspondre à l'en-tête "Content-Type"
+  })
+   // transforme la réponse JSON reçue en objet JavaScript natif;
+}
+
+export function fetchDeleteSpot(id){
+  return fetch(`${apiUrl}/${id}`,{
+      method: "DELETE", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+      "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      
   })
    // transforme la réponse JSON reçue en objet JavaScript natif;
 }

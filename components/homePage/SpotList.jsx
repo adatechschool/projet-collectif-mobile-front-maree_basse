@@ -1,15 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ScrollView , Pressable, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import SpotView from './SpotView.jsx';
 import { fetchSpots } from '../Model.js';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useIsFocused } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 
 const SpotList = () => {
     const [APIData, setAPIData] = useState([]);
-    console.log(APIData)
+    const isFocused = useIsFocused();
+
+    console.log(APIData);
     useEffect(() => {
+        // Call only when screen open or when back on screen
+        if (isFocused) { 
+            getSpots();
+        }
+    }, [isFocused]);
+
+    const getSpots = () => {
+        console.log("Getting spots");
         fetchSpots()
             .then(records => {
                 setAPIData(records);
@@ -17,7 +27,7 @@ const SpotList = () => {
             .catch(err => {
                 console.error(err);
             });
-    }, []);
+    }
 
     const navigation = useNavigation();
 
@@ -40,7 +50,6 @@ const SpotList = () => {
         </SafeAreaView>
     );
 }
-
 
 const styles = StyleSheet.create({
     scrollView: {

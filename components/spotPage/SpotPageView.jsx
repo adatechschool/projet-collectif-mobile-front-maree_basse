@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, ScrollView, Text, Image, TouchableOpacity, Button } from 'react-native';
 import SpotViewModel from '../SpotViewModel';
 import { useNavigation } from '@react-navigation/native';
 import { Linking } from 'react-native';
@@ -33,7 +33,6 @@ const SpotPageView = (props) => {
           <Text style={styles.title}>Link</Text>
           <Text style={styles.petit} onPress={() => Linking.openURL(display.spot.link)}>Discover the spot</Text>
         </ScrollView>
-
   );
 };
 
